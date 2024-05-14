@@ -13,43 +13,50 @@ const NavBar = () => {
         width: '100%',
     };
 
-    const logoStyles = {
+    const logo = {
         filter: 'invert(100%)',
         padding: '5%',
         height: '65%',
         width: '7%',
     };
 
-    const h2Styles = {
+    const titulos = {
         fontFamily: 'Century Gothic, sans-serif',
         fontSize: '1.5em', 
         fontWeight: 'bold',
         margin: '0',
-        padding: '8%',
+        padding: '9%',
+        color: 'white',
+        textDecoration: 'none', 
+    };
+
+    const titulos1 = {
+        fontFamily: 'Century Gothic, sans-serif',
+        fontSize: '1.5em', 
+        fontWeight: 'bold',
+        margin: '0',
+        padding: '15%',
         color: 'white',
         textDecoration: 'none', 
     };
     
     return (
         <nav style={styles}>
-            <img src='multimedia/champions.png' alt="logo" width="40" height="40" style={logoStyles} />
-            <a href='index.html' style={h2Styles}>HOME</a>
-            <a href='champions/champions.html' style={h2Styles}>CHAMPIONS</a>
-            <a href='partidos/partidos.html' style={h2Styles}>PARTIDOS</a>
+            <img src='multimedia/champions.png' alt="logo" width="40" height="40" style={logo} />
+            <a href='index.html' style={titulos}>HOME</a>
+            <a href='champions/champions.html' style={titulos}>CHAMPIONS</a>
+            <a href='partidos/partidos.html' style={titulos1}>PARTIDOS</a>
         </nav>
     );
 }
 
-const Media = () => {
+const VIDEO = () => {
     return (
         <main>
             <video width="100%" height="100%" autoPlay loop playsInline volume={1}>
-                <source src="media/Video_anuncio.mp4" type="video/mp4" />
+                <source src="multimedia/championsalb.mp4" type="video/mp4" />
             </video>
-            <img src='media/Ferrari3.jpg' alt="video" width="100%" height="100%" />
-            <img src='media/Ferrari1.jpeg' alt="video" width="100%" height="80%" />
-            <img src='media/Ferrari2.png' alt="video" width="100%" height="100%" />
-        </main>
+     </main>
 
     );
 }
@@ -67,6 +74,7 @@ const App = () => {
     return (
         <main style={styles}>
             <NavBar />
+            <VIDEO />
         </main>
     );
 }
