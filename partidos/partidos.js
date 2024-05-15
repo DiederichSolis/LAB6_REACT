@@ -128,20 +128,50 @@ const PostsLoader = () => {
 
 const Card = ({ post }) => {
     const [isColumnLayout, setIsColumnLayout] = React.useState(false);
+
     const cardStyles = {
+        boxSizing: 'border-box',
+        padding: '1%',
+        margin: '5rem 0 0 0',
+        transition: '0.3s',
+        backgroundColor: 'rgba(0, 48, 73,0.85)',
+        display: 'flex',
+        borderRadius: '58px',
+        alignItems: isColumnLayout ? 'center' : 'center',
+        flexDirection: isColumnLayout ? 'column' : 'row', 
+        gap: '0.5rem',
+        width: '50%', // Ajusta el ancho al 50% del contenedor padre
+        height: 'auto', // Ajusta el alto automáticamente al contenido
+        maxWidth: '600px', // Opcional: define un ancho máximo
+        maxHeight: '400px' // Opcional: define un alto máximo
+    };
+    const cardStyle1 = {
+        alignItems: 'center',
         boxSizing: 'border-box',
         padding: '2%',
         margin: '5rem 0 0 0',
         boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
         transition: '0.3s',
-        backgroundColor: 'rgba(0, 48, 73)',
-        display: 'flex',
         borderRadius: '58px',
-        alignItems: isColumnLayout ? 'center' : 'center', // Centrar contenido verticalmente o al inicio
-        flexDirection: isColumnLayout ? 'column' : 'row', 
+        backgroundColor: 'rgba(0, 48, 73,0.85)',
+        display: 'flex',
         gap: '1rem',
+        width: '50%', // Ajusta el ancho al 50% del contenedor padre
+        height: 'auto', // Ajusta el alto automáticamente al contenido
+        maxWidth: '600px', // Opcional: define un ancho máximo
+        maxHeight: '400px', // Opcional: define un alto máximo
+        justifyContent: 'center'
     };
-
+    const containerStyles = {
+        display: 'flex', // Configura el contenedor como un flexbox
+        flexWrap: 'wrap', // Permite que los elementos se envuelvan si es necesario
+        gap: '1rem', // Espacio entre las cards
+        justifyContent: 'center', // Opcional: centra las cards horizontalmente
+        alignItems: 'center', // Opcional: alinea las cards verticalmente
+        marginTop: '2rem' // Espacio superior del contenedor
+    };
+    
+    
     const TitleStyles = {
         color: 'white',
         textAlign: 'center',
@@ -158,8 +188,8 @@ const Card = ({ post }) => {
     };
 
     const imageStyles = {
-        maxHeight: '7%',
-        maxWidth: '7%',
+        maxHeight: '40%',
+        maxWidth: '40%',
         borderRadius: '5px',
         flex: '1',
         justifyContent: 'center',
@@ -178,19 +208,22 @@ const Card = ({ post }) => {
     }, []);
 
     return (
-        <div>
-        <div style={cardStyles}>
-            <img src={`${post.imagen_base64}`} alt={post.Equipo_local} style={imageStyles} />
-            <h2 style={TitleStyles}>{post.Fase_champions} </h2>
+        <div style={containerStyles}>
+            <div style={cardStyle1}>
+                <img src={`${post.imagen_base64}`} alt={post.Equipo_local} style={imageStyles} />
+            </div>
+            <div style={cardStyles}>
             <div style={{ flex: '1' }}> {/* Div para alinear texto a la derecha */}
+            <h2 style={TitleStyles}>{post.Fase_champions} </h2>
                 <h3 style={TitleStyles}>{post.Equipo_visitante + " vs " + post.Equipo_local} </h3>
                 <p style={textsStyles}>{"Goles: "+post.Goles_Visitante+" - "+post.Goles_Local}</p>
                 <p style={textsStyles}>{"Fecha: "+post.Fecha_partido}</p>
                 <p style={textsStyles}>{"Pais: "+post.Pais}</p>
                 <p style={textsStyles}>{"Cuidad: "+post.Ciudad}</p>
             </div>
+            </div>
         </div>
-        </div>
+
     );
 };
 
@@ -219,7 +252,7 @@ const Footer = () => {
     const styles = {
         position: 'fixed', // Fijar la posición del footer
         bottom: 0, // Colocarla en la parte inferior
-        background: 'black',
+        background: 'rgba(0, 0, 0, 0.5)', // Color de fondo semi-transparente
         color: 'white', // color de texto
         display: 'flex',
         justifyContent: 'center',
