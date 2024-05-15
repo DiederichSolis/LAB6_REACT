@@ -45,7 +45,7 @@ const NavBar = () => {
             <img src='multimedia/champions.png' alt="logo" width="40" height="40" style={logo} />
             <a href='index.html' style={titulos}>HOME</a>
             <a href='champions/champions.html' style={titulos}>CHAMPIONS</a>
-            <a href='partidos/partidos.html' style={titulos1}>PARTIDOS</a>
+            <a href='partidos/partidos.html' style={titulos1}>SEMIFINAL</a>
         </nav>
     );
 }
