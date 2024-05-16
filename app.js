@@ -56,6 +56,7 @@ const VIDEO = () => {
             <video width="100%" height="100%" autoPlay loop playsInline volume={1}>
                 <source src="multimedia/championsalb.mp4" type="video/mp4" />
             </video>
+            
      </main>
 
     );
