@@ -72,10 +72,9 @@ const NavBar = () => {
 
 <div style={navLinks}>
 
-    <a href='index.html' style={titulos}>HOME</a>
-    <a href='champions/champions.html' style={titulos}>CHAMPIONS</a>
-    <a href='partidos/partidos.html' style={titulos}>PARTIDOS</a>
-    <a href='futbol/futbol.html' style={titulos}>FUTBOL</a>
+<a href='../index.html' style={titulos}>HOME</a>
+                <a href='../champions/champions.html' style={titulos}>CHAMPIONS</a>
+                <a href='../partidos/partidos.html' style={titulos}>SEMIFINAL</a>
 </div>
 </nav>
     );
@@ -167,9 +166,13 @@ const Standings = () => {
                     <thead>
                         <tr>
                             <th>Rank</th>
+                            <th>/</th>
                             <th>Team</th>
+                            <th>/</th>
                             <th>Points</th>
+                            <th>/</th>
                             <th>Goals Diff</th>
+                            <th>/</th>
                             <th>Form</th>
                         </tr>
                     </thead>
