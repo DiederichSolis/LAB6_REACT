@@ -282,6 +282,7 @@ const App = () => {
         position : 'relative',
         margin: 0,
         padding: 0,
+        paddingTop: '15vh',
     };
     return (
         <main style={styles}>

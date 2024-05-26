@@ -143,6 +143,7 @@ const Standings = () => {
         marginTop: '20px', // Espacio arriba de la card
         padding: '20px',
         boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        backgroundColor: "white",
         borderRadius: '8px',
     };
 
@@ -155,10 +156,7 @@ const Standings = () => {
 
     return (
         <div style={cardStyles}>
-             <h1 style={titleStyles}>⚽</h1>
-             <h1 style={titleStyles}>-</h1>
-             <h1 style={titleStyles}>-</h1>
-             <h1 style={titleStyles}>-</h1>
+
             <h1 style={titleStyles}>Champions League</h1>
             <h1 style={titleStyles}>Season 2023</h1>
             {standings.length > 0 ? (
@@ -207,11 +205,16 @@ const App = () => {
         display: 'block',
         position: 'relative',
         margin: 0,
-        padding: 0,
+        padding: 0, 
+        paddingTop: '15vh',
+        backgroundImage: 'url(https://www.impulsyn.com/wp-content/uploads/2024/03/champions2021-2023-09-18-20-45-21.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
     };
 
     return (
         <main style={styles}>
+
             <NavBar />
             <Standings />
             <Footer />
